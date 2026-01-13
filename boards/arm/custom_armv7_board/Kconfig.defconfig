@@ -1,18 +1,7 @@
 # SPDX-License-Identifier: Apache-2.0
-
 # Kconfig.defconfig - Default configuration when custom_armv7_board is selected
 
 if BOARD_CUSTOM_ARMV7_BOARD
-
-config BOARD
-	default "custom_armv7_board"
-
-# Custom board-specific configurations
-config BOARD_HAS_CUSTOM_FEATURES
-	bool
-	default y
-	help
-	  Indicates the board has custom features enabled.
 
 # Enable GPIO by default for LED and button support
 config GPIO
@@ -21,13 +10,5 @@ config GPIO
 # Default serial console settings
 config UART_CONSOLE
 	default y
-
-# Enable hardware floating point
-config FPU
-	default y
-
-# Set default system clock
-config SYS_CLOCK_HW_CYCLES_PER_SEC
-	default 168000000
 
 endif # BOARD_CUSTOM_ARMV7_BOARD

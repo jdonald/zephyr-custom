@@ -9,7 +9,7 @@
 
 /dts-v1/;
 #include <st/f4/stm32f407Xg.dtsi>
-#include <st/f4/stm32f407v(e-g)tx-pinctrl.dtsi>
+#include <st/f4/stm32f407vgtx-pinctrl.dtsi>
 
 / {
 	model = "Custom ARMv7 Development Board";

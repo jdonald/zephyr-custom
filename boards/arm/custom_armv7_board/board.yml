@@ -1,0 +1,5 @@
+board:
+  name: custom_armv7_board
+  vendor: custom
+  socs:
+    - name: stm32f407xg

@@ -1,19 +1,10 @@
 # SPDX-License-Identifier: Apache-2.0
-
 # Board-level default configuration for custom_armv7_board
 
-# SoC and architecture selection
-CONFIG_SOC_SERIES_STM32F4X=y
-CONFIG_SOC_STM32F407XG=y
-
 # ARM Cortex-M4 with FPU
-CONFIG_CPU_CORTEX_M4=y
-CONFIG_CPU_CORTEX_M_HAS_SYSTICK=y
-CONFIG_CPU_HAS_FPU=y
 CONFIG_FPU=y
 
-# Clock configuration - 168MHz HSE with PLL
-CONFIG_CLOCK_CONTROL=y
+# Clock configuration - 168MHz
 CONFIG_SYS_CLOCK_HW_CYCLES_PER_SEC=168000000
 
 # Enable GPIO for LED and button
