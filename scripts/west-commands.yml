@@ -1,0 +1,6 @@
+# SPDX-License-Identifier: Apache-2.0
+
+# West extension commands for the custom board project
+# Currently empty - placeholder for custom west commands
+
+west-commands: []

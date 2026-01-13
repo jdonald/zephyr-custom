@@ -1,0 +1,37 @@
+# SPDX-License-Identifier: Apache-2.0
+
+# west.yml - West workspace manifest for Custom ARMv7 Hello World
+#
+# This manifest defines the Zephyr workspace and dependencies.
+# Use with: west init -l . && west update
+
+manifest:
+  version: "1.0"
+
+  # Default remote for Zephyr and related projects
+  defaults:
+    remote: zephyrproject-rtos
+
+  # Git remotes
+  remotes:
+    - name: zephyrproject-rtos
+      url-base: https://github.com/zephyrproject-rtos
+
+  # Projects (dependencies)
+  projects:
+    # Main Zephyr RTOS repository
+    - name: zephyr
+      remote: zephyrproject-rtos
+      revision: main
+      import:
+        # Import Zephyr's west.yml for HAL and other dependencies
+        name-allowlist:
+          - cmsis
+          - hal_stm32
+          - picolibc
+
+  # Self (this repository)
+  self:
+    path: custom-app
+    # Our boards directory is an "out of tree" board root
+    west-commands: scripts/west-commands.yml

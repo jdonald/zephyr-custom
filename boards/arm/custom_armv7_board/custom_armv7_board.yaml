@@ -1,0 +1,27 @@
+# SPDX-License-Identifier: Apache-2.0
+
+# Board metadata for custom_armv7_board
+
+identifier: custom_armv7_board
+name: Custom ARMv7 Development Board
+type: mcu
+arch: arm
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+ram: 192
+flash: 1024
+supported:
+  - gpio
+  - uart
+  - counter
+  - spi
+  - i2c
+  - pwm
+  - watchdog
+  - adc
+  - dac
+  - usb_device
+  - can
+vendor: custom

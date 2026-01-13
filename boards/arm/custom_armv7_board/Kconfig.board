@@ -1,0 +1,18 @@
+# SPDX-License-Identifier: Apache-2.0
+
+# Kconfig.board - Board selection configuration for custom ARMv7 board
+
+config BOARD_CUSTOM_ARMV7_BOARD
+	bool "Custom ARMv7 Development Board"
+	depends on SOC_SERIES_STM32F4X
+	select SOC_STM32F407XG
+	select BOARD_HAS_CUSTOM_FEATURES
+	help
+	  Custom ARMv7-based development board using STM32F407VG MCU.
+	  This is an out-of-tree board definition demonstrating how to
+	  create custom hardware support for Zephyr RTOS.
+
+	  Features:
+	  - ARM Cortex-M4 core with FPU
+	  - 1MB Flash, 192KB SRAM
+	  - Custom peripheral configuration
