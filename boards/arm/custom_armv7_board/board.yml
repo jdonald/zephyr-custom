@@ -1,5 +1,6 @@
 board:
   name: custom_armv7_board
+  full_name: Custom ARMv7 Development Board
   vendor: custom
   socs:
-    - name: stm32f407xg
+    - name: stm32f407xx
