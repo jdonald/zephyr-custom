@@ -1,0 +1,2 @@
+# SPDX-License-Identifier: Apache-2.0
+# Kconfig.board for HWMv2 - minimal, SoC selection via board.yml

@@ -1,0 +1,74 @@
+# SPDX-License-Identifier: Apache-2.0
+
+# Kconfig - Application-level configuration for Hello World
+
+mainmenu "Custom ARMv7 Board Hello World Application"
+
+# Source the Zephyr Kconfig to get all standard options
+source "Kconfig.zephyr"
+
+# Application-specific configuration menu
+menu "Hello World Application Settings"
+
+config HELLO_APP_VERSION
+	string "Application version string"
+	default "1.0.0"
+	help
+	  Version string for the hello world application.
+	  This is displayed at startup in the banner.
+
+config HELLO_BLINK_INTERVAL_MS
+	int "LED blink interval in milliseconds"
+	default 1000
+	range 100 10000
+	help
+	  Sets the interval between LED state toggles.
+	  Valid range is 100ms to 10000ms (10 seconds).
+	  Default is 1000ms (1 second).
+
+config HELLO_ENABLE_DEBUG_LOG
+	bool "Enable debug logging"
+	default n
+	help
+	  When enabled, additional debug information is printed
+	  to the console. This increases code size slightly.
+
+config HELLO_STARTUP_DELAY_MS
+	int "Startup delay in milliseconds"
+	default 0
+	range 0 5000
+	help
+	  Optional delay before starting the main application loop.
+	  Useful for debugging to allow console connection.
+
+endmenu
+
+# Custom board features menu
+menu "Custom Board Features"
+
+config BOARD_HAS_CUSTOM_FEATURES
+	bool "Board has custom features"
+	default y if BOARD_CUSTOM_ARMV7_BOARD
+	help
+	  Indicates this build is targeting the custom ARMv7 board
+	  and custom features are available.
+
+config CUSTOM_BOARD_LED_COUNT
+	int "Number of LEDs on the board"
+	default 3
+	range 1 8
+	depends on BOARD_HAS_CUSTOM_FEATURES
+	help
+	  Number of LEDs available on the custom board.
+	  The default board has 3 LEDs (User, Status, Error).
+
+config CUSTOM_BOARD_BUTTON_COUNT
+	int "Number of buttons on the board"
+	default 1
+	range 0 4
+	depends on BOARD_HAS_CUSTOM_FEATURES
+	help
+	  Number of buttons available on the custom board.
+	  The default board has 1 user button.
+
+endmenu

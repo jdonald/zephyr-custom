@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: Apache-2.0
+# Kconfig.defconfig - Default configuration when custom_armv7_board is selected
+
+if BOARD_CUSTOM_ARMV7_BOARD
+
+# Enable GPIO by default for LED and button support
+config GPIO
+	default y
+
+# Default serial console settings
+config UART_CONSOLE
+	default y
+
+endif # BOARD_CUSTOM_ARMV7_BOARD
